@@ -10,6 +10,7 @@ export const removeToken = () => {
   store.dispatch(storeLogout());
 };
 
-export const setToken = (token: string) => {
+export const setToken = (res: { accessToken: string }) => {
+  const token = res.accessToken;
   store.dispatch(storeLogin({ token }));
 };
