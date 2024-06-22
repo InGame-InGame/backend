@@ -8,14 +8,16 @@ import Dropdown from '@/components/common/Dropdown';
 const Ranking = () => {
   return (
     <RankingStyle>
-      <Dropdown />
-      <div className="rankTitleContainer">
-        <img src={tropy} alt="tropy" />
-        <p>랭킹 순위</p>
-      </div>
-      <div>
+      <header>
+        <Dropdown />
+        <div className="rankTitleContainer">
+          <img src={tropy} alt="tropy" />
+          <p>랭킹 순위</p>
+        </div>
+      </header>
+      <main>
         <RankingCardList />
-      </div>
+      </main>
       <div className="topBtn">
         <Top />
       </div>

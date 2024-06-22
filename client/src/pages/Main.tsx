@@ -33,41 +33,52 @@ const Main = () => {
 
   return (
     <MainStyle>
-      <Dropdown />
-      <WeekCalendar />
-      <UserProfile userInfo={userInfo} />
-      <section className="questSection">
-        <div className="questTitle">
-          <BiNotepad />
-          <h2>Main Quest</h2>
-          <CreateQuestButton pageUrl="/createquest" />
-        </div>
-        <div>
-          {mainQuest?.length ? (
-            mainQuest?.map((content) => <MainBox key={content.id} content={content} date={date} refetchMainBoxData={refetch} />)
-          ) : isMainLoading ? (
-            <Loading />
-          ) : (
-            <p>등록된 메인 퀘스트가 없습니다</p>
-          )}
-        </div>
-      </section>
-      <section className="questSection">
-        <div className="questTitle">
-          <BiNotepad />
-          <h2>Sub Quest</h2>
-          <CreateQuestButton modalName="subQuest" />
-        </div>
-        <div>
-          {quest?.length ? (
-            quest.map((content) => <SubBox key={content.id} content={content} />)
-          ) : isSubLoading ? (
-            <Loading />
-          ) : (
-            <p>등록된 서브 퀘스트가 없습니다</p>
-          )}
-        </div>
-      </section>
+      <header>
+        <Dropdown />
+        <WeekCalendar />
+      </header>
+      <main>
+        <UserProfile userInfo={userInfo} />
+        <section>
+          <header className="questTitle">
+            <BiNotepad />
+            <h2>Main Quest</h2>
+            <CreateQuestButton pageUrl="/createquest" />
+          </header>
+          <div>
+            {mainQuest?.length ? (
+              mainQuest?.map((content) => (
+                <MainBox
+                  key={content.id}
+                  content={content}
+                  date={date}
+                  refetchMainBoxData={refetch}
+                />
+              ))
+            ) : isMainLoading ? (
+              <Loading />
+            ) : (
+              <p>등록된 메인 퀘스트가 없습니다</p>
+            )}
+          </div>
+        </section>
+        <section>
+          <header className="questTitle">
+            <BiNotepad />
+            <h2>Sub Quest</h2>
+            <CreateQuestButton modalName="subQuest" />
+          </header>
+          <div>
+            {quest?.length ? (
+              quest.map((content) => <SubBox key={content.id} content={content} />)
+            ) : isSubLoading ? (
+              <Loading />
+            ) : (
+              <p>등록된 서브 퀘스트가 없습니다</p>
+            )}
+          </div>
+        </section>
+      </main>
     </MainStyle>
   );
 };
@@ -78,16 +89,11 @@ const MainStyle = styled.div`
   gap: 1.5rem;
   width: 100%;
 
-  .questSection {
+  .questTitle {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .questTitle {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
   }
 `;
 

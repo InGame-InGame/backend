@@ -2,27 +2,25 @@ import styled from 'styled-components';
 import { profileURL } from '@/shared/dummy';
 import { RankingItem } from '@/models/ranking.model';
 
-
 interface RankingCardProps extends RankingItem {}
 
 const RankingCard = ({ nickname, point, rank, level }: RankingCardProps) => {
-  
   return (
     <>
       <RankingCardStyle>
-        <section className="rpContainer">
+        <div className="rpContainer">
           <div className="rank">{rank}</div>
           <div className="rProfile">
             <img src={profileURL} alt="" />
           </div>
-        </section>
-        <section className="nlContainer">
+        </div>
+        <div className="nlContainer">
           <h2 className="nickname">{nickname}</h2>
           <div className="lpContainer">
             <p className="level">LV {level}</p>
             <p className="point">P {point}</p>
           </div>
-        </section>
+        </div>
       </RankingCardStyle>
     </>
   );
