@@ -53,4 +53,16 @@ export const GlobalStyle = createGlobalStyle`
   ul, li {
     list-style: none;
   }
+
+  header, main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 `;
