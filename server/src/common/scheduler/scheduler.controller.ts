@@ -14,9 +14,4 @@ export class SchedulerController {
   async updateQuestStatus() {
     await this.schedulerService.updateQuestStatus(this.pointService);
   }
-
-  @Cron(CronExpression.EVERY_30_SECONDS)
-  serviceHealthCheck() {
-    this.schedulerService.serviceHealthCheck();
-  }
 }

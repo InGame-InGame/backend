@@ -11,6 +11,7 @@ import { AllExceptionFilter } from './common/filters/all-exception.filter';
 import { SchedulerModule } from './common/scheduler/scheduler.module';
 import { PointModule } from './apis/point/point.module';
 import { CommonModule } from './common/common.module';
+import { HealthcheckModule } from './common/healthcheck/healthcheck.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { CommonModule } from './common/common.module';
     RankingModule,
     PointModule,
     CommonModule,
+    HealthcheckModule,
   ],
   providers: [
     {

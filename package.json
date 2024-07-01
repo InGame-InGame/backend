@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@nestjs/axios": "^3.0.2",
+    "@nestjs/microservices": "^10.3.9",
+    "ioredis": "^5.4.1"
+  }
+}
